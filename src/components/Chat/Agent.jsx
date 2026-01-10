@@ -28,7 +28,7 @@ const Agent = () => {
             const contextData = vectorStore.search(userText);
             console.log("Vector Match:", contextData);
 
-            const response = await fetch('http://localhost:8000/agent/query', {
+            const response = await fetch('/api/agent/query', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const Agent = () => {
             return data.response;
         } catch (error) {
             console.error(error);
-            return `Error: ${error.message}. Make sure the backend is running at http://localhost:8000`;
+            return `Error: ${error.message}. Please try again later or contact me via email.`;
         }
     };
 
