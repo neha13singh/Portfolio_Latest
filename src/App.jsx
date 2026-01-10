@@ -4,13 +4,13 @@ import Dashboard from './components/Dashboard/Dashboard';
 import { motion } from 'framer-motion';
 import { Terminal, LayoutDashboard } from 'lucide-react';
 import portfolioData from './data/portfolio.json';
-import { Github, Mail, MapPin, Linkedin } from 'lucide-react';
+import { Github, Mail, MapPin, Linkedin, X } from 'lucide-react';
 
 function App() {
   const [isMobileAgentOpen, setIsMobileAgentOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-gray-300 p-2 md:p-6 flex flex-col relative overflow-hidden">
+    <div className="h-screen bg-black text-gray-300 p-2 md:p-6 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-agent-dark via-black to-black opacity-80"></div>
@@ -21,7 +21,7 @@ function App() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-10"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto h-[92vh] flex flex-col gap-4">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto h-full flex flex-col gap-3 md:gap-4 overflow-hidden">
 
         {/* Modern Header */}
         <div className="bg-agent-black/40 backdrop-blur-md border border-agent-border rounded-xl p-3 md:p-4 shadow-lg flex flex-col md:flex-row justify-between items-center gap-4 shrink-0 relative overflow-hidden group">
@@ -112,8 +112,21 @@ function App() {
           </div>
 
           {/* Right: Neural Link (Chat) */}
-          {/* On Mobile: Hidden if Agent is Closed. On Desktop: Always Visible (Sidebar) */}
-          <div className={`lg:w-[350px] xl:w-[400px] bg-agent-black/30 backdrop-blur-sm border border-agent-border rounded-2xl shadow-2xl overflow-hidden flex flex-col ${isMobileAgentOpen ? 'flex flex-1' : 'hidden lg:flex'}`}>
+          {/* On Mobile: Absolute overlay when open. On Desktop: Fixed sidebar */}
+          <div className={`
+            ${isMobileAgentOpen
+              ? 'fixed inset-0 z-50 flex flex-col bg-black p-2'
+              : 'hidden lg:flex lg:w-[350px] xl:w-[400px]'} 
+            bg-agent-black/30 backdrop-blur-sm border border-agent-border rounded-2xl shadow-2xl overflow-hidden
+          `}>
+            {isMobileAgentOpen && (
+              <button
+                onClick={() => setIsMobileAgentOpen(false)}
+                className="lg:hidden absolute top-4 right-4 z-[60] p-2 bg-white/10 rounded-full text-white border border-white/20"
+              >
+                <X size={20} />
+              </button>
+            )}
             <Agent />
           </div>
 
