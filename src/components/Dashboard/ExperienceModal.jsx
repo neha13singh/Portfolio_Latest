@@ -9,7 +9,7 @@ const ExperienceModal = ({ experience, onClose }) => {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="bg-agent-black border-2 border-agent-green w-full max-w-2xl h-[450px] flex flex-col rounded-xl shadow-[0_0_30px_rgba(0,255,65,0.2)] overflow-hidden relative"
+                className="bg-agent-black border-2 border-white/20 w-full max-w-2xl h-[450px] flex flex-col rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.05)] overflow-hidden relative"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}
@@ -18,12 +18,12 @@ const ExperienceModal = ({ experience, onClose }) => {
                         <X size={20} />
                     </button>
                     <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2 bg-agent-green/10 rounded-lg">
-                            <Briefcase className="text-agent-green" size={24} />
+                        <div className="p-2 bg-white/10 rounded-lg">
+                            <Briefcase className="text-white" size={24} />
                         </div>
                         <div>
                             <h2 className="text-2xl font-bold text-white">{experience.role}</h2>
-                            <p className="text-agent-green font-mono text-sm">{experience.company}</p>
+                            <p className="text-agent-silver font-mono text-sm">{experience.company}</p>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const ExperienceModal = ({ experience, onClose }) => {
                             <ul className="space-y-3">
                                 {experience.points.map((point, idx) => (
                                     <li key={idx} className="flex items-start gap-3 group">
-                                        <CheckCircle2 size={16} className="text-agent-green mt-0.5 shrink-0 group-hover:drop-shadow-[0_0_5px_rgba(0,255,65,0.5)] transition-all" />
+                                        <CheckCircle2 size={16} className="text-white mt-0.5 shrink-0 group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all" />
                                         <span className="text-sm text-gray-400 group-hover:text-gray-200 transition-colors">{point}</span>
                                     </li>
                                 ))}

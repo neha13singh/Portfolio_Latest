@@ -17,16 +17,16 @@ const ProjectModal = ({ project, onClose }) => {
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
-                className="w-full max-w-2xl h-[450px] flex flex-col bg-agent-black border-2 border-agent-green rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,255,65,0.2)] relative"
+                className="w-full max-w-2xl h-[450px] flex flex-col bg-agent-black border-2 border-white/20 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)] relative"
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
             >
                 {/* Header */}
-                <div className="flex items-center justify-between p-4 border-b border-gray-800 bg-agent-dark shrink-0">
+                <div className="flex items-center justify-between p-4 border-b border-agent-border bg-agent-header shrink-0">
                     <div className="flex items-center gap-3">
-                        <div className="w-2 h-8 bg-agent-green rounded-sm"></div>
+                        <div className="w-2 h-8 bg-white/80 rounded-sm"></div>
                         <div>
                             <h2 className="text-xl font-bold text-white tracking-wide">{project.name}</h2>
-                            <span className="text-xs text-agent-green font-mono uppercase tracking-widest">STATUS: {project.status}</span>
+                            <span className="text-xs text-white/50 font-mono uppercase tracking-widest">STATUS: {project.status}</span>
                         </div>
                     </div>
                     <button
@@ -42,7 +42,7 @@ const ProjectModal = ({ project, onClose }) => {
 
                     {/* Long Description */}
                     <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-agent-blue text-sm font-bold uppercase tracking-wider">
+                        <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-wider">
                             <Layers size={14} />
                             <span>Mission Brief</span>
                         </div>
@@ -53,13 +53,13 @@ const ProjectModal = ({ project, onClose }) => {
 
                     {/* Tech Stack */}
                     <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-agent-blue text-sm font-bold uppercase tracking-wider">
+                        <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-wider">
                             <Zap size={14} />
                             <span>Technology Stack</span>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {project.tech.map((t, i) => (
-                                <span key={i} className="px-3 py-1 bg-agent-dark/50 border border-gray-700 text-agent-green text-xs font-mono rounded-md">
+                                <span key={i} className="px-3 py-1 bg-agent-header border border-agent-border text-agent-silver text-xs font-mono rounded-md">
                                     {t}
                                 </span>
                             ))}
@@ -69,13 +69,13 @@ const ProjectModal = ({ project, onClose }) => {
                     {/* Features List */}
                     {project.features && (
                         <div className="space-y-3">
-                            <div className="text-agent-blue text-sm font-bold uppercase tracking-wider">
+                            <div className="text-white text-sm font-bold uppercase tracking-wider">
                                 Key Features / Outcomes
                             </div>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                 {project.features.map((f, i) => (
                                     <li key={i} className="flex items-start gap-2 text-sm text-gray-400">
-                                        <span className="text-agent-green mt-1">▹</span>
+                                        <span className="text-white/80 mt-1">▹</span>
                                         <span>{f}</span>
                                     </li>
                                 ))}
@@ -93,7 +93,7 @@ const ProjectModal = ({ project, onClose }) => {
                             </a>
                         )}
                         {project.links?.demo && (
-                            <a href={project.links.demo} className="flex items-center gap-2 px-4 py-2 bg-agent-green hover:bg-green-400 text-black rounded transition-colors text-sm font-bold shadow-lg shadow-agent-green/20">
+                            <a href={project.links.demo} className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-agent-silver text-black rounded transition-colors text-sm font-bold shadow-lg shadow-white/20">
                                 <ExternalLink size={16} />
                                 <span className="hidden md:inline">Live Demo</span>
                                 <span className="md:hidden">Demo</span>

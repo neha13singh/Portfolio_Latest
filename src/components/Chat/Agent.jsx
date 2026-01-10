@@ -80,14 +80,14 @@ const Agent = () => {
     return (
         <div className="flex flex-col h-full bg-agent-black border border-agent-grid rounded-lg overflow-hidden shadow-2xl font-mono text-sm md:text-base">
             {/* Header */}
-            <div className="bg-agent-dark p-3 border-b border-agent-grid flex items-center justify-between">
-                <div className="flex items-center gap-2 text-agent-green">
-                    <Terminal size={18} />
-                    <span className="font-bold tracking-wider">AGENT_V1.0</span>
+            <div className="bg-agent-header p-3 border-b border-agent-border flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <Terminal size={18} className="text-white" />
+                    <span className="font-bold tracking-wider text-white">AGENT_V1.0</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-agent-green animate-pulse"></div>
-                    <span className="text-xs text-gray-500">ONLINE</span>
+                    <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                    <span className="text-xs text-gray-500">OPERATIONAL</span>
                 </div>
             </div>
 
@@ -101,8 +101,8 @@ const Agent = () => {
                         className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                         <div className={`max-w-[80%] p-3 rounded-lg border ${msg.type === 'user'
-                            ? 'bg-agent-dark border-gray-700 text-gray-200'
-                            : 'bg-agent-dark/50 border-agent-green/30 text-agent-green shadow-[0_0_10px_rgba(0,255,65,0.1)]'
+                            ? 'bg-agent-header border-agent-border text-gray-200 shadow-sm'
+                            : 'bg-white/10 border-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)]'
                             }`}>
                             <div className="flex items-center gap-2 mb-1 opacity-50 text-xs uppercase tracking-widest">
                                 {msg.type === 'user' ? <User size={12} /> : <Terminal size={12} />}
@@ -115,7 +115,7 @@ const Agent = () => {
                     </motion.div>
                 ))}
                 {isTyping && (
-                    <div className="flex items-center gap-1 text-agent-green ml-2">
+                    <div className="flex items-center gap-1 text-white ml-2">
                         <span className="animate-bounce">●</span>
                         <span className="animate-bounce delay-100">●</span>
                         <span className="animate-bounce delay-200">●</span>
@@ -131,12 +131,12 @@ const Agent = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Enter command or query..."
-                    className="flex-1 bg-black border border-gray-800 rounded px-4 py-2 text-white focus:outline-none focus:border-agent-green focus:ring-1 focus:ring-agent-green transition-all placeholder-gray-600"
+                    className="flex-1 bg-black border border-agent-border rounded px-4 py-2 text-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all placeholder-gray-600"
                 />
                 <button
                     type="submit"
                     disabled={!input.trim()}
-                    className="bg-agent-green text-black px-4 py-2 rounded font-bold hover:bg-green-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="bg-white text-black px-4 py-2 rounded font-bold hover:bg-agent-silver disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                     <Send size={18} />
                 </button>
