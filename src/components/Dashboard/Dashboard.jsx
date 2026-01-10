@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     return (
         <div className="relative h-full">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 p-4 h-full overflow-y-auto custom-scrollbar">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 p-4 pb-24 md:pb-4 h-full overflow-y-auto custom-scrollbar">
 
                 {/* Main Content (Span 8) - FIRST for Mobile Priority */}
                 <div className="md:col-span-8 space-y-6">

@@ -10,7 +10,7 @@ function App() {
   const [isMobileAgentOpen, setIsMobileAgentOpen] = useState(false);
 
   return (
-    <div className="h-screen bg-black text-gray-300 p-2 md:p-6 flex flex-col relative overflow-hidden">
+    <div className="h-[100dvh] bg-black text-gray-300 p-2 md:p-6 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-agent-dark via-black to-black opacity-80"></div>
