@@ -10,14 +10,14 @@ const ProjectModal = ({ project, onClose }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-sm"
             onClick={onClose}
         >
             <motion.div
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
-                className="w-full max-w-2xl h-[450px] flex flex-col bg-agent-black border-2 border-white/20 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)] relative"
+                className="w-full max-w-2xl max-h-full flex flex-col bg-agent-black border-2 border-white/20 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)] relative"
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
             >
                 {/* Header */}

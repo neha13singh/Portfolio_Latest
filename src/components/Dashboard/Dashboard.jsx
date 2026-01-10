@@ -123,20 +123,21 @@ const Dashboard = () => {
                     </Card>
                 </div>
 
-                {/* Project Modal */}
-                <AnimatePresence>
-                    {selectedProject && (
-                        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-                    )}
-                </AnimatePresence>
-
-                {/* Experience Modal */}
-                <AnimatePresence>
-                    {selectedExperience && (
-                        <ExperienceModal experience={selectedExperience} onClose={() => setSelectedExperience(null)} />
-                    )}
-                </AnimatePresence>
             </div>
+
+            {/* Project Modal */}
+            <AnimatePresence>
+                {selectedProject && (
+                    <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+                )}
+            </AnimatePresence>
+
+            {/* Experience Modal */}
+            <AnimatePresence>
+                {selectedExperience && (
+                    <ExperienceModal experience={selectedExperience} onClose={() => setSelectedExperience(null)} />
+                )}
+            </AnimatePresence>
         </div>
     );
 };

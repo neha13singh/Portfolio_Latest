@@ -4,12 +4,12 @@ import { X, Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
 
 const ExperienceModal = ({ experience, onClose }) => {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={onClose}>
+        <div className="absolute inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/60 backdrop-blur-sm" onClick={onClose}>
             <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="bg-agent-black border-2 border-white/20 w-full max-w-2xl h-[450px] flex flex-col rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.05)] overflow-hidden relative"
+                className="bg-agent-black border-2 border-white/20 w-full max-w-2xl max-h-full flex flex-col rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.05)] overflow-hidden relative"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}
