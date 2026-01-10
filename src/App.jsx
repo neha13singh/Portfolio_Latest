@@ -43,7 +43,7 @@ function App() {
             <div className="flex flex-col flex-1 min-w-0">
               <h1 className="text-xl md:text-3xl font-bold text-white tracking-tighter leading-none flex items-center gap-2 truncate">
                 {portfolioData.profile.name.split(' ')[0]}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-agent-zinc to-cyan-500 font-light truncate">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-agent-zinc to-[#984949] font-light truncate">
                   {portfolioData.profile.name.split(' ').slice(1).join(' ')}
                 </span>
               </h1>
