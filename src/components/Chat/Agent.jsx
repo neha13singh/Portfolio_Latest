@@ -82,11 +82,11 @@ const Agent = () => {
             {/* Header */}
             <div className="bg-agent-header p-3 border-b border-agent-border flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Terminal size={18} className="text-white" />
+                    <Terminal size={18} className="text-agent-zinc" />
                     <span className="font-bold tracking-wider text-white">AGENT_V1.0</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                    <div className="w-2 h-2 rounded-full bg-agent-zinc animate-pulse"></div>
                     <span className="text-xs text-gray-500">OPERATIONAL</span>
                 </div>
             </div>
@@ -136,7 +136,7 @@ const Agent = () => {
                 <button
                     type="submit"
                     disabled={!input.trim()}
-                    className="bg-white text-black px-4 py-2 rounded font-bold hover:bg-agent-silver disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="bg-agent-zinc text-agent-black px-4 py-2 rounded font-bold hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                     <Send size={18} />
                 </button>

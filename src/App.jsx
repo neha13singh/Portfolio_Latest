@@ -10,10 +10,10 @@ function App() {
   const [isMobileAgentOpen, setIsMobileAgentOpen] = useState(false);
 
   return (
-    <div className="h-[100dvh] bg-black text-gray-300 p-2 md:p-6 flex flex-col relative overflow-hidden">
+    <div className="h-[100dvh] bg-agent-black text-gray-300 p-2 md:p-6 flex flex-col relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-agent-dark via-black to-black opacity-80"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-agent-dark via-agent-black to-agent-black opacity-80"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-20"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-20"></div>
 
@@ -32,18 +32,18 @@ function App() {
           <div className="flex items-center gap-4 w-full md:w-auto">
             {/* Avatar */}
             <div className="relative shrink-0">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white/50 p-0.5 relative overflow-hidden bg-gray-900 flex items-center justify-center">
-                <span className="text-xl md:text-2xl font-bold text-white/50">{portfolioData.profile.name.charAt(0)}</span>
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-agent-zinc/50 p-0.5 relative overflow-hidden bg-agent-card flex items-center justify-center">
+                <span className="text-xl md:text-2xl font-bold text-agent-zinc">{portfolioData.profile.name.charAt(0)}</span>
                 {/* If you had an image, it would go here. For now, initial is fine or we can leave blank */}
               </div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-3.5 md:h-3.5 bg-white rounded-full border-2 border-black animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.6)]"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 md:w-3.5 md:h-3.5 bg-agent-zinc rounded-full border-2 border-agent-black animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.6)]"></div>
             </div>
 
             {/* Identity Info */}
             <div className="flex flex-col flex-1 min-w-0">
               <h1 className="text-xl md:text-3xl font-bold text-white tracking-tighter leading-none flex items-center gap-2 truncate">
                 {portfolioData.profile.name.split(' ')[0]}
-                <span className="text-agent-dim font-light truncate">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-agent-zinc to-cyan-500 font-light truncate">
                   {portfolioData.profile.name.split(' ').slice(1).join(' ')}
                 </span>
               </h1>
