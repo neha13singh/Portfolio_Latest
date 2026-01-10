@@ -6,6 +6,25 @@
         "location": "India",
         "phone": "9463634652",
         "summary": "Application Engineer and Developer with expertise in Java, React, and Artificial Intelligence. Experienced in building enterprise workflows, real-time competitive coding platforms, and AI-driven applications. Strong background in Data Structures, Algorithms, and Multi-Agent Systems.",
+        "details": {
+            "dob": "2002-04-13",
+            "hobbies": [
+                "Badminton",
+                "Chess",
+                "Trying new things",
+                "Watching knowledgeable podcasts"
+            ],
+            "goals": "To become a heavily efficient and world-class developer.",
+            "strengths": [
+                "Rapid Problem Solving (400+ DSA Problems)",
+                "Adaptability (Full Stack & AI)",
+                "System Design"
+            ],
+            "weaknesses": [
+                "Perfectionist with Code Quality",
+                "Sometimes gets too deep into optimization"
+            ]
+        },
         "socials": {
             "github": "https://github.com/neha13singh",
             "linkedin": "https://www.linkedin.com/in/neha-singh-a55254220/",

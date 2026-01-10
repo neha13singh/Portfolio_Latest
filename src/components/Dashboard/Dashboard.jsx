@@ -107,7 +107,7 @@ const Dashboard = () => {
                     </Card>
 
                     {/* Achievements - Fixed Height 270px */}
-                    <Card title="System_Achievements" delay={0.5}>
+                    <Card title="Achievements" delay={0.5}>
                         <div className="h-[270px] overflow-y-auto custom-scrollbar pr-2">
                             <ul className="space-y-3">
                                 {portfolioData.achievements?.map((ach, idx) => (
