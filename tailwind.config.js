@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// Force rebuild for Vercel sync - 2026-01-10T17:44
 export default {
   content: [
     "./index.html",
