@@ -1,0 +1,265 @@
+{
+    "profile": {
+        "name": "Neha Singh",
+        "title": "Application Engineer & Full Stack Developer",
+        "email": "neha786.india@gmail.com",
+        "location": "India",
+        "phone": "9463634652",
+        "summary": "Application Engineer and Developer with expertise in Java, React, and Artificial Intelligence. Experienced in building enterprise workflows, real-time competitive coding platforms, and AI-driven applications. Strong background in Data Structures, Algorithms, and Multi-Agent Systems.",
+        "socials": {
+            "github": "https://github.com/neha13singh",
+            "linkedin": "https://www.linkedin.com/in/neha-singh-a55254220/",
+            "portfolio": "https://my-portfolio-nry9.onrender.com"
+        }
+    },
+    "education": [
+        {
+            "degree": "Bachelor of Electronics & Communication Engineering",
+            "school": "Institute of Engineering and Technology, Lucknow",
+            "year": "2025",
+            "score": "CGPA: 8.5/10"
+        },
+        {
+            "degree": "Diploma in Electronics & Communication Engineering",
+            "school": "Government Girls Polytechnic, Lucknow",
+            "year": "2022",
+            "score": "83.18%"
+        },
+        {
+            "degree": "Senior Secondary (12th Grade) — PCM",
+            "school": "Ramgarhia Girls Senior Secondary School (PSEB)",
+            "year": "2020",
+            "score": "89%"
+        },
+        {
+            "degree": "Secondary (10th Grade)",
+            "school": "Shri Krishna Model High School (PSEB)",
+            "year": "2018",
+            "score": "87%"
+        }
+    ],
+    "skills": [
+        "Data Structures & Algorithms",
+        "C++",
+        "Java",
+        "Python",
+        "SQL",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "FastAPI",
+        "REST APIs",
+        "Workflow Automation",
+        "OpenAI APIs",
+        "Prompt Engineering",
+        "Multi-Agent Systems",
+        "CrewAI",
+        "RAG Pipelines",
+        "PII Detection",
+        "Docker",
+        "PostgreSQL",
+        "MySQL",
+        "WebSockets",
+        "Operating Systems",
+        "DBMS",
+        "GitHub",
+        "Postman"
+    ],
+    "skillCategories": {
+        "Fundamentals": [
+            "DSA",
+            "OS",
+            "DBMS"
+        ],
+        "AI Engineering": [
+            "Generative AI",
+            "OpenAI APIs",
+            "Prompt Engineering",
+            "Multi-Agent Systems (CrewAI)",
+            "RAG Pipelines",
+            "PII Detection"
+        ],
+        "Languages": [
+            "Java",
+            "Python",
+            "SQL",
+            "JavaScript",
+            "C++"
+        ],
+        "Backend": [
+            "FastAPI",
+            "REST APIs",
+            "Workflow Automation",
+            "Node.js",
+            "Express.js"
+        ],
+        "Frontend": [
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "Monaco Editor"
+        ],
+        "Tools": [
+            "Git",
+            "GitHub",
+            "Postman",
+            "Docker",
+            "WebSockets",
+            "Linux Basics"
+        ]
+    },
+    "projects": [
+        {
+            "id": "meetcode",
+            "name": "MeetCode",
+            "status": "LIVE",
+            "description": "Real-time competitive coding platform with multiplayer support.",
+            "longDescription": "Built a high-concurrency real-time multiplayer coding platform using Next.js and FastAPI. Identify synchronized game state, shared timers, and win/loss conditions via WebSockets with sub-second latency. Engineered a secure sandboxed remote code execution system using Docker SDK, enforcing strict CPU/memory limits.",
+            "tech": [
+                "React",
+                "Next.js",
+                "FastAPI",
+                "Docker",
+                "WebSockets",
+                "PostgreSQL"
+            ],
+            "features": [
+                "Real-time 1v1 coding duels via WebSockets",
+                "Secure remote code execution (Sandboxed Docker)",
+                "Automated matchmaking & Practice mode",
+                "Monaco Editor integration for IDE experience"
+            ],
+            "links": {
+                "repo": "https://github.com/neha13singh/Meetcode_Latest/tree/main/meetcode-latest"
+            }
+        },
+        {
+            "id": "repollo",
+            "name": "Repollo AI",
+            "status": "COMPLETED",
+            "description": "AI Research and Content Moderation Platform with multi-agent logic.",
+            "longDescription": "Full-stack AI platform for research and content moderation. Implemented multi-agent logic, PII redaction, and prompt injection checks. Features a modern dashboard with markdown support and real-time APIs.",
+            "tech": [
+                "OpenAI",
+                "FastAPI",
+                "Next.js",
+                "Python",
+                "TailwindCSS"
+            ],
+            "features": [
+                "Multi-agent logic for content moderation",
+                "PII Redaction & Prompt Injection checks",
+                "Real-time APIs & Markdown support",
+                "Modern React Dashboard with Dark Mode"
+            ],
+            "links": {
+                "repo": "https://ai-day-planner.onrender.com/"
+            }
+        },
+        {
+            "id": "visioncraft",
+            "name": "VisionCraft",
+            "status": "LIVE",
+            "description": "AI Image Generation Platform using DALL·E API.",
+            "longDescription": "Engineered an AI-powered image generation platform leveraging OpenAI's DALL·E API. Allows users to transform textual prompts into generated artwork and share them with the community.",
+            "tech": [
+                "React",
+                "MERN Stack",
+                "OpenAI API",
+                "MongoDB",
+                "Cloudinary"
+            ],
+            "features": [
+                "Text-to-Image generation via DALL·E",
+                "Community gallery with 200+ artworks",
+                "Built-in content sharing features"
+            ],
+            "links": {
+                "demo": "https://visioncraft-ai-image-generator-client.onrender.com"
+            }
+        },
+        {
+            "id": "bookshow",
+            "name": "Book Show App",
+            "status": "LIVE",
+            "description": "Virtual bookstore management application.",
+            "longDescription": "Designed and developed a full-stack application for managing a virtual bookstore. Supports searchable book listings, adding new titles, and detailed summaries.",
+            "tech": [
+                "React",
+                "MERN Stack",
+                "MongoDB"
+            ],
+            "features": [
+                "Searchable book listings",
+                "Admin features for adding titles",
+                "Detailed book summaries"
+            ],
+            "links": {
+                "demo": "https://book-show-frontend-oekh.onrender.com/"
+            }
+        }
+    ],
+    "experience": [
+        {
+            "role": "Application Engineer",
+            "company": "Newgen Software",
+            "duration": "Mar 2025 -- Present",
+            "description": "Configuring enterprise workflows (IBPS, OmniDocs). Developing Java JAR/WAR integrations and implementing business rules using Java & SQL.",
+            "points": [
+                "Worked with Newgen products including IBPS and OmniDocs to configure and customize enterprise workflows for multiple client deployments.",
+                "Developed and packaged customer-specific backend logic as Java JAR and WAR files for integrations with third-party systems.",
+                "Implemented business rules, APIs, and database operations using Java and SQL to support document management and process automation.",
+                "Collaborated with the Delivery and Integration teams to troubleshoot production issues and validate deployments."
+            ]
+        },
+        {
+            "role": "Trainee",
+            "company": "Softpro India",
+            "duration": "Sep 2022 -- Dec 2022",
+            "description": "Operated embedded systems projects using ATmega16 and Raspberry Pi. Integration using Atmel Studio and Proteus.",
+            "points": [
+                "Operated and serviced embedded systems projects using Atmel Studio and Proteus.",
+                "Focused on ATmega16 microcontroller and Raspberry Pi integration to enhance system functionality and performance."
+            ]
+        }
+    ],
+    "achievements": [
+        {
+            "title": "LeetCode: Solved 400+ DSA problems",
+            "link": "https://leetcode.com/Nehasingh1328"
+        },
+        {
+            "title": "GeeksforGeeks: Ranked 245, solved 150+ DSA problems",
+            "link": "https://auth.geeksforgeeks.org/user/Nehasingh134202"
+        },
+        {
+            "title": "Generative AI with Python — Udemy (2026)",
+            "link": "https://drive.google.com/file/d/1-R_MRH2dcQIve9wddxw5Kh6jSRQ2Aqyg/view?usp=drive_link"
+        },
+        {
+            "title": "Java Programming — Udemy (2025)",
+            "link": "https://drive.google.com/file/d/1G84VV7bVLD3ylrPMiNABJqQ1Bp4QCvhT/view?usp=drive_link"
+        },
+        {
+            "title": "The Complete SQL Bootcamp — Udemy (2025)",
+            "link": "https://drive.google.com/file/d/1Gj60h1RV0HcyGPc0akfsxSJwI5D2Xk21/view?usp=drive_link"
+        },
+        {
+            "title": "Fundamentals of Artificial Intelligence — IBM (2024)",
+            "link": "https://drive.google.com/file/d/1fjm-UbI9NZsJ8i9sTsN8kn-JbGdi0r9Z/view?usp=sharing"
+        },
+        {
+            "title": "Multi-Agent Systems — CrewAI (2024)",
+            "link": "https://drive.google.com/file/d/1V44S4U2MiAP4jprPjiMJP3OJghywHNRa/view?usp=sharing"
+        },
+        {
+            "title": "Web Development — InternPe (2024)",
+            "link": "https://drive.google.com/file/d/1djPKyU-XVMJtYBBtxlz3jvYr0TGJUo3r/view?usp=sharing"
+        },
+        {
+            "title": "Python Course Completion — GUVI (2022)",
+            "link": "https://drive.google.com/file/d/1M6k3VGxGRkfplKkxpkHd6mJwollJmVkM/view?usp=sharing"
+        }
+    ]
+}
