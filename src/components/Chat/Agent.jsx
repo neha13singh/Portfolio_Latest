@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Terminal, User } from 'lucide-react';
 import { motion } from 'framer-motion';
-import OpenAI from 'openai';
 import { vectorStore } from '../../utils/vectorStore';
 import portfolioData from '../../data/portfolio.json';
 
@@ -14,12 +12,6 @@ const Agent = () => {
     const [isTyping, setIsTyping] = useState(false);
     const scrollRef = useRef(null);
 
-    // Initialize OpenAI Client
-    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-    const openai = apiKey ? new OpenAI({
-        apiKey: apiKey,
-        dangerouslyAllowBrowser: true // Client-side only for this demo
-    }) : null;
 
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -31,59 +23,34 @@ const Agent = () => {
     }, []);
 
     const processQuery = async (userText) => {
-        if (!openai) {
-            return "System Error: API Key not configured. Please add VITE_OPENAI_API_KEY to .env file.";
-        }
-
-        // Semantic Search via Fuse.js (Client-side Vector DB)
-        const contextData = vectorStore.search(userText);
-        console.log("Vector Match:", contextData);
-
-        const exampleQA = [
-            { q: "Give me a short professional summary", a: "Neha specializes in backend and AI engineering, building production-grade systems using Java, FastAPI, Docker, and OpenAI APIs." },
-            { q: "What is Neha’s strongest project?", a: "MeetCode is her flagship project — a real-time competitive coding platform with WebSockets, Docker-based code execution, and automated matchmaking." },
-            { q: "Where does Neha work currently?", a: "She works as an Application Engineer at Newgen Software, developing enterprise workflows and Java-based integrations." },
-            { q: "Tell me about her education", a: "Neha completed her Bachelor’s in Electronics & Communication Engineering from IET Lucknow in 2025 with a CGPA of 8.5." },
-            { q: "Is she suitable for backend roles?", a: "Yes, she has production experience with APIs, databases, Docker, and enterprise Java systems." },
-            { q: "What AI experience does she have?", a: "She built GPT-based platforms with RAG pipelines, PII redaction, and multi-agent moderation systems." },
-            { q: "Is Neha good at DSA?", a: "She has solved 400+ problems on LeetCode and ranked 245 on GeeksforGeeks." }
-        ];
-
         try {
-            const completion = await openai.chat.completions.create({
-                model: "gpt-4o-mini",
-                messages: [
-                    {
-                        role: "system",
-                        content: `You are Neha Singh's Interactive Resume. You speak as "We" or "Neha".
-            
-            Current Date: ${new Date().toDateString()}
+            // Semantic Search via Fuse.js (Client-side Vector DB)
+            const contextData = vectorStore.search(userText);
+            console.log("Vector Match:", contextData);
 
-            DATA CONTEXT (Use this as your PRIMARY memory):
-            ${JSON.stringify(contextData)}
-            
-            IDENTITY & INSTRUCTIONS:
-            1. **Identity**: You are NOT a general AI. You are the specific representation of Neha's professional life.
-            2. **Data-Driven**: Answer ONLY using the provided data. If a specific detail (like a specific library) isn't in the JSON, assume Neha hasn't explicitly highlighted it, but infer from similar skills if safe.
-            3. **No General Lectures**: Do not explain *what* a technology is (e.g., don't define "React"). Instead, explain *how Neha used it* (e.g., "Neha used React to build the frontend of MeetCode...").
-            4. **Aggressive Summarization**: Never dump raw lists. Blend facts into 1-2 powerful, professional sentences.
-            5. **Education Rule**: STRICTLY summarize ONLY the highest qualification (Degree, College, Year) in 1 sentence. Ignore 10th/12th grades unless specifically asked.
-            6. **Fallback**: If the data is empty or irrelevant, politely steer back to Neha's known expertise (Backend, AI, Full Stack).
-            7. **Tone**: Professional, Confident, Concise.
-            
-            STYLE EXAMPLES (Mimic this brevity and tone):
-            ${exampleQA.map(ex => `Q: ${ex.q}\nA: ${ex.a}`).join('\n\n')}
-            `
-                    },
-                    { role: "user", content: userText }
-                ],
+            const response = await fetch('http://localhost:8000/agent/query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    userText,
+                    contextData
+                }),
             });
 
-            console.log("💰 Token Usage:", completion.usage); // Log usage stats
-            return completion.choices[0].message.content;
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.detail || 'Backend error');
+            }
+
+            const data = await response.json();
+            console.log("💰 Backend Token Usage:", data.usage);
+
+            return data.response;
         } catch (error) {
             console.error(error);
-            return `Error: ${error.message}`;
+            return `Error: ${error.message}. Make sure the backend is running at http://localhost:8000`;
         }
     };
 
@@ -163,13 +130,12 @@ const Agent = () => {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder={apiKey ? "Enter command or query..." : "API Key Missing (Check .env)"}
-                    disabled={!apiKey}
-                    className="flex-1 bg-black border border-gray-800 rounded px-4 py-2 text-white focus:outline-none focus:border-agent-green focus:ring-1 focus:ring-agent-green transition-all placeholder-gray-600 disabled:opacity-50"
+                    placeholder="Enter command or query..."
+                    className="flex-1 bg-black border border-gray-800 rounded px-4 py-2 text-white focus:outline-none focus:border-agent-green focus:ring-1 focus:ring-agent-green transition-all placeholder-gray-600"
                 />
                 <button
                     type="submit"
-                    disabled={!input.trim() || !apiKey}
+                    disabled={!input.trim()}
                     className="bg-agent-green text-black px-4 py-2 rounded font-bold hover:bg-green-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                     <Send size={18} />
