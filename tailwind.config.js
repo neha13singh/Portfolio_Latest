@@ -30,7 +30,7 @@ export default {
         'agent-silver': '#f9b0b0ff',
         'agent-zinc': '#ecdddfff',
         'agent-dim': '#ffffffff',
-        'agent-grid': '#8a5462ff',
+        'agent-grid': '#8a5462ff'
 
         //new
       
