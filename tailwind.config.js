@@ -22,7 +22,8 @@ export default {
         'agent-dark': '#363131ff',
         'agent-card': '#000000ff',
         'agent-header': '#090404ff',
-        'agent-border': '#261414ff',
+        // 'agent-border': '#261414ff',
+        'agent-border': '#1f0f0fff'
         'agent-white': '#430e0eff',
         'agent-silver': '#f9b0b0ff',
         'agent-zinc': '#ecdddfff',
