@@ -33,25 +33,28 @@ export default {
         // 'agent-grid': '#8a5462ff',
 
         //new
-        'agent-black':  '#000000ff',   // pure black – base background
+      
+  'agent-black':  '#000000ff',   // true black (base)
 
-  'agent-dark':   '#1c1816ff',   // dark brown-black (main background)
+  'agent-dark':   '#0e0c0bff',   // main background (very dark brown-black)
 
-  'agent-card':   '#141110ff',   // slightly lifted from black (cards)
+  'agent-card':   '#151211ff',   // cards (slightly lifted)
 
-  'agent-header': '#0d0a09ff',   // near-black brown (header/nav)
+  'agent-header': '#0b0908ff',   // header / top bar (near black)
 
-  'agent-border': '#2a1f1bff',   // modern soft brown border (not harsh)
+  'agent-border': '#2a211dff',   // soft brown border (less visible)
 
-  'agent-white':  '#e8e1dcff',   // warm off-white (text, not pure white)
+  'agent-white':  '#e6dfd9ff',   // warm off-white (text)
 
-  'agent-silver': '#b7a8a1ff',   // muted brown-grey (secondary text)
+  'agent-silver': '#b5aaa3ff',   // muted secondary text
 
-  'agent-zinc':   '#3a2e29ff',   // dark brown-grey (inputs / dividers)
+  'agent-zinc':   '#3a302cff',   // dividers / inputs
 
-  'agent-dim':    '#ffffffcc',   // slightly transparent white (muted text)
+  'agent-dim':    '#ffffffcc',   // dim text (unchanged)
 
-  'agent-grid':   '#4a3a34ff'    // subtle brown grid / separators
+  'agent-grid':   '#4a3f39ff'    // subtle grid / separators
+
+
 
         
       },
