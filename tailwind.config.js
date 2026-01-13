@@ -8,17 +8,17 @@ export default {
   theme: {
     extend: {
       colors: {
-  'agent-black': '#000000ff',
-  'agent-dark': '#363131ff',
-  'agent-card': '#000000ff',
-  'agent-header': '#090404ff',
-  'agent-border': '#1f0f0fff',   // ✅ comma added
-  'agent-white': '#430e0eff',
-  'agent-silver': '#f9b0b0ff',
-  'agent-zinc': '#ecdddfff',
-  'agent-dim': '#ffffffff',
-  'agent-grid': '#8a5462ff',     // ✅ comma added
-},
+        'agent-black': '#000000ff',
+        'agent-dark': '#363131ff',
+        'agent-card': '#000000ff',
+        'agent-header': '#1d1212ff',
+        'agent-border': '#564444ff',   // ✅ comma added
+        'agent-white': '#430e0eff',
+        'agent-silver': '#f5c0c0ff',
+        'agent-zinc': '#ecdddfff',
+        'agent-dim': '#ffffffff',
+        'agent-grid': '#8a5462ff',     // ✅ comma added
+      },
       fontFamily: {
         mono: ['"Fira Code"', 'monospace'],
         sans: ['Inter', 'sans-serif'],
